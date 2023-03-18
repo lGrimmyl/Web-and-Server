@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import TextField from '@material-ui/core/TextField';
-
-
+import { useFormControl } from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
 
 
 const useStyles = makeStyles({
@@ -93,7 +93,7 @@ const useStyles = makeStyles({
   });
 
 
-
+ 
 
 
 function Login() {
@@ -101,19 +101,16 @@ function Login() {
   
 
   const [accessKey, setAccessKey] = useState('');
-  const [loginError, setLoginError] = useState('');
-
+  const [loginError, setLoginError] = useState();
+  const [value, setValue] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (accessKey === 'valid-access-key') {
-      try {
-        const response = /*await axios.post('/api/login/', */ { access_key: accessKey };
-        localStorage.setItem('token', response.data.token);
-      } catch (error) {
-        console.error(error);
-      }
+    if (value === 'valid-access-key') {
+      setLoginError(false)
+      setAccessKey('')
     } else {
-      setLoginError('Invalid access key. Please try again.');
+      setLoginError(true)
+      setAccessKey('Incorrect Access key')
     }
   };
 
@@ -134,16 +131,20 @@ function Login() {
             <div className={classes.label1}>
             <Grid container spacing={1} alignItems="flex-end">
                   <Grid item>
-                    <LockOpenIcon />
+                    <LockOpenIcon/>
                   </Grid>
-                    
-                    <TextField
-                        id="input-with-icon"
-                        label="Access Key"
-                        type="text"
-                        value={accessKey}
-                        onChange={(event) => setAccessKey(event.target.value)}
-                    />
+                  
+                  <TextField
+                    id='Key'
+                    label= 'Access Key' 
+                    required
+                    value={value}
+                    type="text"
+                    onChange={(e) => setValue(e.target.value)}
+                    error={loginError}
+                    helperText={accessKey}
+                />
+                  
               </Grid>
                     </div>
                 <button className={classes.button} type="submit"> Login </button>
@@ -155,5 +156,8 @@ function Login() {
 
   );
 }
+
+
+
 
 export default Login;
