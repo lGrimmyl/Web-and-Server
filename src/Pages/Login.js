@@ -12,6 +12,7 @@ import TextField from '@material-ui/core/TextField';
 const useStyles = makeStyles({
     container: {
     height: '100vh', // Set the height to 50% of the viewport height
+    width: '100vw',
     
   },
   container1: {
@@ -27,11 +28,11 @@ const useStyles = makeStyles({
 
   image1: {
     bottom: 100,
-    left: 10,
-    width: '50%',
-    height: '60%',
-    top: 50,
-   position: 'absolute'
+    left: 4,
+    width: '100%',
+    height: '75%',
+    top: 10,
+    position: 'relative'
   
     
   },
@@ -48,7 +49,7 @@ const useStyles = makeStyles({
   },
 
     label1: {
-      top: 400,
+      top: 350,
       left: 50,
       color: 'rgba(0, 0, 0, 0.4)',
       width: '100%',
@@ -71,7 +72,7 @@ const useStyles = makeStyles({
   
     button: {
       position: 'relative',
-      top: 430,
+      top: 380,
       left: 50,
       fontFamily: 'Raleway',
       fontStyle: 'normal',
@@ -123,7 +124,7 @@ function Login() {
             <Grid container spacing={0} className={classes.container}>
             <Grid item xs={12} md={6} className={classes.container1}>
               
-                <img src="https://i.ibb.co/CtLJwM2/c3.png" className={classes.age1}im/>
+                <img src="https://i.ibb.co/CtLJwM2/c3.png" className={classes.image1}/>
                 <img src="https://i.ibb.co/fxbL54R/c2.png" className={classes.image2}/>
               
               
