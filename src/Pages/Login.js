@@ -121,9 +121,8 @@ function Login() {
             <Grid container spacing={0} className={classes.container}>
             <Grid item xs={12} md={6} className={classes.container1}>
               
-                <img src="https://i.ibb.co/CtLJwM2/c3.png" className={classes.image1}/>
-                <img src="https://i.ibb.co/fxbL54R/c2.png" className={classes.image2}/>
-              
+               <img src="https://i.ibb.co/PWfdt0h/ustplogo.png" className={classes.image1}/>
+               <img src="https://i.ibb.co/Gsr8sYH/btwv.png" className={classes.image2}/>
               
             </Grid>
             <Grid item xs={12} md={6} className={classes.container2}>
