@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@mui/material/TextField';
-
+import { useNavigate } from 'react-router-dom';
 const useStyles = makeStyles({
   container: {
     alignItems: 'center',
@@ -144,9 +144,12 @@ const useStyles = makeStyles({
 
 function Registration() {
   const classes = useStyles();
-
+  const navigate = useNavigate();
   return (
     <div>
+            <img src="https://i.ibb.co/QnCYhPm/Ellipse-14.png" className={classes.elfirstimg}/>
+            <img src="https://i.ibb.co/JxwMg2Y/Ellipse-16.png" className={classes.elsecimg}/>
+            <img src="https://i.ibb.co/5FLWtFQ/Ellipse-15.png" className={classes.elthirdimg}/>
       <div className={classes.containerngablue}>
         <h1 className={classes.headertext}>ADD STUDENT</h1>
         <label className={classes.label}>Enroll A New Student</label>
@@ -196,9 +199,7 @@ function Registration() {
             
            
            
-            <img src="https://i.ibb.co/QnCYhPm/Ellipse-14.png" className={classes.elfirstimg}/>
-            <img src="https://i.ibb.co/JxwMg2Y/Ellipse-16.png" className={classes.elsecimg}/>
-            <img src="https://i.ibb.co/5FLWtFQ/Ellipse-15.png" className={classes.elthirdimg}/>
+            
            
            
         </div>

@@ -5,9 +5,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import TextField from '@material-ui/core/TextField';
-import { useFormControl } from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
-
+import { Button } from '@mui/material';
+import { Link, Navigate } from 'react-router-dom';
+import Menu from './Menu';
+import { Route,Routes,useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles({
     container: {
@@ -97,20 +98,23 @@ const useStyles = makeStyles({
 
 
 function Login() {
+  const navigate = useNavigate();
   const classes = useStyles();
-  
-
   const [accessKey, setAccessKey] = useState('');
   const [loginError, setLoginError] = useState();
+  const [but, setBut] = useState(true);
   const [value, setValue] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (value === 'valid-access-key') {
       setLoginError(false)
       setAccessKey('')
+      setBut(false)
+      navigate("/Menu");
     } else {
       setLoginError(true)
       setAccessKey('Incorrect Access key')
+      setBut(true)
     }
   };
 
@@ -126,7 +130,7 @@ function Login() {
               
             </Grid>
             <Grid item xs={12} md={6} className={classes.container2}>
-            <form onSubmit={handleSubmit}>
+
             <div className={classes.label1}>
             <Grid container spacing={1} alignItems="flex-end">
                   <Grid item>
@@ -146,10 +150,14 @@ function Login() {
                   
               </Grid>
                     </div>
-                <button className={classes.button} type="submit"> Login </button>
-
+                    
+                <Button
+                variant='contained'
+                onClick={handleSubmit}
+               disabled={!value}
+                className={classes.button}> Login </Button>
               
-        </form>
+
             </Grid>
           </Grid>
 

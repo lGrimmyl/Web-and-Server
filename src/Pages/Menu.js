@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import StorageIcon from '@mui/icons-material/Storage';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-
-
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 const useStyles = makeStyles({
 
 
@@ -138,29 +138,30 @@ const useStyles = makeStyles({
 
 function Menu() {
     const classes = useStyles();
-
+    const navigate = useNavigate();
     return (
         <div>
             <div className={classes.container}>
                 <h1 className={classes.headertext}> What would you like to access? </h1>
                 <p className={classes.paratext}> You can check the number of students enrolled in a specific subject in the “Access Data” menu or proceed with registering in the “Registration Portal” menu.</p>
+                <img src="https://i.ibb.co/qk5v8zZ/wwwaaa-1.png" className={classes.firstimg} />
+                <img src="https://i.ibb.co/9r6M4MR/wwwaaa-4.png" className={classes.secondimg} />
+                <img src="https://i.ibb.co/ZdMWPms/wwwaaa-5.png" className={classes.thirdimg} />
 
                 <div className={classes.containerngablue}>
-                    <button className={classes.accessDataButton}>
+                    <Button onClick={()=> navigate("/Registration")} className={classes.accessDataButton}>
                         <StorageIcon className={classes.accessDataIcon} /> Access Data
-                    </button>
+                    </Button>
 
-                    <button className={classes.RegistrationButton}>
+                    <Button onClick={()=> navigate("/Registration")} className={classes.RegistrationButton}>
                         <PersonAddIcon className={classes.PersonAddIcon} /> Registration Portal
-                    </button>
-                    <button className={classes.logout}>Logout</button>
+                    </Button>
+                    <Button onClick={()=> navigate("/")} className={classes.logout}>Logout</Button>
                     <img src="https://i.ibb.co/NTQP85D/Rectangle-42.png" className={classes.bordersaubos} />
                 </div>
 
 
-                <img src="https://i.ibb.co/qk5v8zZ/wwwaaa-1.png" className={classes.firstimg} />
-                <img src="https://i.ibb.co/9r6M4MR/wwwaaa-4.png" className={classes.secondimg} />
-                <img src="https://i.ibb.co/ZdMWPms/wwwaaa-5.png" className={classes.thirdimg} />
+                
             </div>
         </div>
     );

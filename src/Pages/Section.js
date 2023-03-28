@@ -157,7 +157,7 @@ const useStyles = makeStyles({
 
 function Section() {
     const classes = useStyles();
-
+    const navigate = useNavigate();
     return (
         <div>
             <div className={classes.container}>
@@ -165,7 +165,7 @@ function Section() {
                     <label className={classes.label1}> Section</label>
                     <label className={classes.label2}> School Year 2022-2023</label>
 
-                    <button className={classes.buttonsched} type="submit"> Check Schedule </button>
+                    <button onClick={()=> navigate("/Schedule")} className={classes.buttonsched} type="submit"> Check Schedule </button>
                     <button className={classes.buttonsub} type="submit"> Check Subject </button>
                     <button className={classes.buttonback} type="submit"> Back to Menu </button>
                     <img src="https://i.ibb.co/PWfdt0h/ustplogo.png" className={classes.image1} />
