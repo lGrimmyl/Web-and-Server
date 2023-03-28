@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { fontWeight } from '@mui/system';
-
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -166,8 +166,8 @@ function Section() {
                     <label className={classes.label2}> School Year 2022-2023</label>
 
                     <button onClick={()=> navigate("/Schedule")} className={classes.buttonsched} type="submit"> Check Schedule </button>
-                    <button className={classes.buttonsub} type="submit"> Check Subject </button>
-                    <button className={classes.buttonback} type="submit"> Back to Menu </button>
+                    <button onClick={()=> navigate("/Subject")} className={classes.buttonsub} type="submit"> Check Subject </button>
+                    <button onClick={()=> navigate("/Menu")} className={classes.buttonback} type="submit"> Back to Menu </button>
                     <img src="https://i.ibb.co/PWfdt0h/ustplogo.png" className={classes.image1} />
                 </div>
                 <div className={classes.containerngablue}>

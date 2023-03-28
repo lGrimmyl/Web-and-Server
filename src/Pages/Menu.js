@@ -149,7 +149,7 @@ function Menu() {
                 <img src="https://i.ibb.co/ZdMWPms/wwwaaa-5.png" className={classes.thirdimg} />
 
                 <div className={classes.containerngablue}>
-                    <Button onClick={()=> navigate("/Registration")} className={classes.accessDataButton}>
+                    <Button onClick={()=> navigate("/Subject")} className={classes.accessDataButton}>
                         <StorageIcon className={classes.accessDataIcon} /> Access Data
                     </Button>
 

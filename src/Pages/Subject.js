@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-
-
+import { Button } from '@material-ui/core';
+import { useNavigate } from 'react-router-dom';
 
 
 const useStyles = makeStyles({
@@ -144,16 +144,16 @@ const useStyles = makeStyles({
 
 function Subject() {
     const classes = useStyles();
-
+    const navigate = useNavigate();
     return (
         <div>
             <div className={classes.container}>
 
 
                 <img src="https://i.ibb.co/pJzvNpj/imgbr2.png" className={classes.imgsaubos} />
-                <button className={classes.schedulebutton}>Check Schedule</button>
-                <button className={classes.sectionbutton}>Check Section</button>
-                <button className={classes.backbutton}>Back to Menu</button>
+                <Button  onClick={()=> navigate("/Schedule")} className={classes.schedulebutton}>Check Schedule</Button>
+                <Button onClick={()=> navigate("/Section")}className={classes.sectionbutton}>Check Section</Button>
+                <Button onClick={()=> navigate("/Menu")} className={classes.backbutton}>Back to Menu</Button>
 
                 <div className={classes.containerngablue}>
                     <label className={classes.label1}>Subject</label>
