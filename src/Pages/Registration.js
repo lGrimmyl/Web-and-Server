@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
@@ -145,6 +146,51 @@ const useStyles = makeStyles({
 function Registration() {
   const classes = useStyles();
   const navigate = useNavigate();
+  const [FName, setAccessKey] = useState('');
+  const [LName, AccessKey] = useState('');
+  const [IDName, AccessKey2] = useState('');
+  const [EName, AccessKey3] = useState('');
+  const [NName, AccessKey4] = useState('');
+  const [loginError, setLoginError] = useState();
+  const [Fvalue, setValue] = useState("");
+  const [Lvalue, Value2] = useState("");
+  const [IDvalue, Value3] = useState("");
+  const [Evalue, Value4] = useState("");
+  const [Nvalue, Value5] = useState("");
+  const email_regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (Fvalue >= 10) {
+      setLoginError(false)
+      setAccessKey('')
+      navigate("/Menu");
+    } 
+    else if (Lvalue >= 10) {
+      setLoginError(false)
+      AccessKey('')
+      navigate("/Menu");
+    } 
+    else if (IDvalue >= 10) {
+      setLoginError(false)
+      AccessKey2('')
+      navigate("/Menu");
+    } 
+    else if (Evalue >= 10) {
+      setLoginError(false)
+      AccessKey3('')
+      navigate("/Menu");
+    } 
+    else if (Nvalue >= 10) {
+      setLoginError(false)
+      AccessKey4('')
+      navigate("/Menu");
+    } 
+    else {
+      setLoginError(true)
+      setAccessKey('Incorrect Input, Please provide a proper input')
+    }
+  };
+  
   return (
     <div>
             <img src="https://i.ibb.co/QnCYhPm/Ellipse-14.png" className={classes.elfirstimg}/>
@@ -157,40 +203,67 @@ function Registration() {
             <TextField
                 id="outlined-textarea"
                 label="First Name"
+                required
+                value={Fvalue}
                 placeholder="Enter Your First Name"
                 multiline
+                type="text"
+                onChange={(e) => setValue(e.target.value)}
                 className={classes.textField1}
+                error={loginError}
+                helperText={FName}
             />
 
             <TextField
                 id="outlined-textarea"
                 label="Last Name"
+                value={Lvalue}
                 placeholder="Enter Your Last Name"
                 multiline
+                type="text"
+                onChange={(e) => Value2(e.target.value)}
                 className={classes.textField2}
+                error={loginError}
+                helperText={LName}
             />
             <TextField
                 id="outlined-textarea"
                 label="ID Number"
+                value={IDvalue}
+                type="number"
+                onChange={(e) => Value3(e.target.value)}
+                error={loginError}
+                helperText={IDName}
                 placeholder="Enter Your ID Number"
                 multiline
-                        className={classes.textField3}
+                className={classes.textField3}
                         />
-                <TextField
-                    id="outlined-textarea"
-                    label="Email"
-                    placeholder=" Enter Your Email"
-                    multiline
-                    className={classes.textField4}
+            <TextField
+                id="outlined-textarea"
+                label="Email"
+                value={Evalue}
+                type="text"
+                onChange={(e) => Value4(e.target.value)}
+                error={loginError}
+                helperText={EName}
+                placeholder=" Enter Your Email"
+                multiline
+                className={classes.textField4}
                     />
-                <TextField
-                    id="outlined-textarea"
-                    label="Phone Number"
-                    placeholder=" Enter Your Phone Number"
-                    multiline
-                    className={classes.textField5}
+            <TextField
+                id="outlined-textarea"
+                label="Phone Number"
+                placeholder=" Enter Your Phone Number"
+                value={Nvalue}
+                type="number"
+                onChange={(e) => Value5(e.target.value)}
+                error={loginError}
+                helperText={NName}
+                multiline
+                className={classes.textField5}
                     />
-                <button className={classes.button} type="submit"> Begin New Enrollment </button>
+                <button className={classes.button} variant='contained'
+                onClick={handleSubmit}> Begin New Enrollment </button>
                 <img src="https://i.ibb.co/bBcQQSv/blueboy.png" className={classes.boyimg}/>
                 
                 </div>
