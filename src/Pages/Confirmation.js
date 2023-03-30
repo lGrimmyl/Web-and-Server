@@ -2,7 +2,7 @@ import React from 'react';
 import{ makeStyles } from '@material-ui/core/styles';
 import { fontWeight } from '@mui/system';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-
+import { Button } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
@@ -278,7 +278,7 @@ function Confirmation({ term, campus, registrationID, registeredDate }) {
                <img src=" https://i.ibb.co/3BJvsJ6/Ellipse-20.png" className={classes.ell4}/> 
                <img src=" https://i.ibb.co/N3n8wnv/Ellipse-19.png" className={classes.ell5}/>  
 
-               <button className={classes.button} type="submit"> Back to Main Menu </button>
+               <Button onClick={()=> navigate("/Menu")} className={classes.button} type="submit"> Back to Main Menu </Button>
 
                 <div className= {classes.headercontainer}>
                     <label className= {classes.headertxt1}> Successfully Enrolled </label>
