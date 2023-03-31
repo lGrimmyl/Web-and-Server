@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import{ makeStyles } from '@material-ui/core/styles';
 import { fontWeight } from '@mui/system';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import { useNavigate } from 'react-router-dom';
 
 
 import {
@@ -144,6 +145,12 @@ function SubjectRegistration() {
   const classes = useStyles();
   const [selectedOption, setSelectedOption] = useState('');
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate("/Confirmation");
+  };
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -183,7 +190,8 @@ function SubjectRegistration() {
           </div>
         </div>
         <label className={classes.contlabel1}>Subjects</label>
-        <button className={classes.buttonlogin} type="submit">
+        <button className={classes.buttonlogin} type="submit" variant='contained'
+                onClick={handleSubmit}>
           Enroll
         </button>
         <Box className={classes.form}>

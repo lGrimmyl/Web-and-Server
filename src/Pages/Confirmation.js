@@ -3,7 +3,7 @@ import{ makeStyles } from '@material-ui/core/styles';
 import { fontWeight } from '@mui/system';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import { Button } from '@material-ui/core';
-
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles({
     
@@ -267,7 +267,12 @@ const useStyles = makeStyles({
  
 function Confirmation({ term, campus, registrationID, registeredDate }) {
     const classes = useStyles();
-   
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      navigate("/Menu");
+    };
     return (
         <div>
             <div className={classes.container}>
@@ -278,7 +283,7 @@ function Confirmation({ term, campus, registrationID, registeredDate }) {
                <img src=" https://i.ibb.co/3BJvsJ6/Ellipse-20.png" className={classes.ell4}/> 
                <img src=" https://i.ibb.co/N3n8wnv/Ellipse-19.png" className={classes.ell5}/>  
 
-               <Button onClick={()=> navigate("/Menu")} className={classes.button} type="submit"> Back to Main Menu </Button>
+               <Button variant='contained' onClick={handleSubmit} className={classes.button} type="submit"> Back to Main Menu </Button>
 
                 <div className= {classes.headercontainer}>
                     <label className= {classes.headertxt1}> Successfully Enrolled </label>

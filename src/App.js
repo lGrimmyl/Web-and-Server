@@ -4,6 +4,8 @@ import Menu from "./Pages/Menu"
 import Registration from "./Pages/Registration";
 import Schedule from "./Pages/Schedule";
 import Subject from "./Pages/Subject";
+import SubjectRegistration from "./Pages/SubjectRegistration";
+import Confirmation from "./Pages/Confirmation";
 import {
   BrowserRouter,
   Routes, //replaces "Switch" used till v5
@@ -42,6 +44,14 @@ const router = createHashRouter([
   {
     path: "/Section",
     element: <Section />,
+  },
+  {
+    path: "/SubjectRegistration",
+    element: <SubjectRegistration />,
+  },
+  {
+    path: "/Confirmation",
+    element: <Confirmation />,
   },
 ])
 
