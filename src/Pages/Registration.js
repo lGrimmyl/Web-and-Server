@@ -190,7 +190,7 @@ function Registration() {
                     multiline
                     className={classes.textField5}
                     />
-                <button className={classes.button} type="submit"> Begin New Enrollment </button>
+                <button onClick={()=> navigate("/Subject")} className={classes.button} type="submit"> Begin New Enrollment </button>
                 <img src="https://i.ibb.co/bBcQQSv/blueboy.png" className={classes.boyimg}/>
                 
                 </div>
