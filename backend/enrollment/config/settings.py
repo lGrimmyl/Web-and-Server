@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'subjects',
     'professor',
     'students',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -144,12 +145,21 @@ DJOSER = {
     'SEND_ACTIVATION_EMAIL': True,
     'SEND_CONFIRMATION_EMAIL': True,
     'ACTIVATION_URL': 'activation/{uid}/{token}',
+    'LOGIN_FIELD' : 'email',
+    'SERIALIZERS' : {
+        'user_create' : 'accounts.serializers.AuthenCreateSerializer'
+    }
 }
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
+
+
+CORS_ALLOW_ORIGINS = [
+    'http://localhost:8000',
+]
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_ALL_CREDENTIALS = True
