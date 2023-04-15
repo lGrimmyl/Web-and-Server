@@ -163,27 +163,27 @@ function Registration() {
     if (Fvalue >= 10) {
       setLoginError(false)
       setAccessKey('')
-      navigate("/Menu");
+      navigate("/SubjectRegistration");
     } 
     else if (Lvalue >= 10) {
       setLoginError(false)
       AccessKey('')
-      navigate("/Menu");
+      navigate("/SubjectRegistration");
     } 
     else if (IDvalue >= 10) {
       setLoginError(false)
       AccessKey2('')
-      navigate("/Menu");
+      navigate("/SubjectRegistration");
     } 
     else if (Evalue >= 10) {
       setLoginError(false)
       AccessKey3('')
-      navigate("/Menu");
+      navigate("/SubjectRegistration");
     } 
     else if (Nvalue >= 10) {
       setLoginError(false)
       AccessKey4('')
-      navigate("/Menu");
+      navigate("/SubjectRegistration");
     } 
     else {
       setLoginError(true)
