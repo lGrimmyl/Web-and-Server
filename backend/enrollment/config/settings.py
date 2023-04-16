@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'accounts',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -146,8 +147,10 @@ DJOSER = {
     'SEND_CONFIRMATION_EMAIL': True,
     'ACTIVATION_URL': 'activation/{uid}/{token}',
     'LOGIN_FIELD' : 'email',
+    'PASSWORD_RESET_CONFIRM_URL' : 'reset-password/{uid}/{token}',
     'SERIALIZERS' : {
-        'user_create' : 'accounts.serializers.AuthenCreateSerializer'
+        'user_create' : 'accounts.serializers.AuthenCreateSerializer',
+        'current_user' : 'accounts.serializers.CustomUserSerializer',
     }
 }
 
