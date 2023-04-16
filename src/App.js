@@ -6,21 +6,34 @@ import Schedule from "./Pages/Schedule";
 import Subject from "./Pages/Subject";
 import SubjectRegistration from "./Pages/SubjectRegistration";
 import Confirmation from "./Pages/Confirmation";
+import Section from "./Pages/Section";
+import Register from "./Pages/Register";
+import Profile from "./Pages/Profle";
 import {
-  BrowserRouter,
-  Routes, //replaces "Switch" used till v5
-  Route,
-  createHashRouter,
+  createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-import Section from "./Pages/Section";
+import Activation from "./Pages/Activation";
 
 
-const router = createHashRouter([
+
+
+const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Login />,
+    path: "/Login",
+    element: <Register />,
   },
+  {
+    path: "/activation/:uid/:token",
+    element: <Activation />,
+  },
+  
+  {
+    path: "/Profile",
+    element: <Profile />,
+  },
+
+ 
   {
     path: "/Menu",
     element: <Menu />,
