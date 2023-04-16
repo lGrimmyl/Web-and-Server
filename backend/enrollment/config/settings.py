@@ -68,7 +68,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,14 +151,19 @@ DJOSER = {
     'SERIALIZERS' : {
         'user_create' : 'accounts.serializers.AuthenCreateSerializer',
         'current_user' : 'accounts.serializers.CustomUserSerializer',
+    },
+    'EMAIL' : {
+        'activation' : 'accounts.email.CustomActivationEmail'
     }
 }
+
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
 
+FRONTEND_URL = 'http://localhost:3000'
 
 CORS_ALLOW_ORIGINS = [
     'http://localhost:8000',
