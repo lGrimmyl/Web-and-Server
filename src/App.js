@@ -20,7 +20,12 @@ import Activation from "./Pages/Activation";
 
 const router = createBrowserRouter([
   {
-    path: "/Login",
+    path: "/",
+    element: <Login />,
+  },
+  
+  {
+    path: "/Register",
     element: <Register />,
   },
   {

@@ -2,7 +2,7 @@ import React from 'react';
 import{ makeStyles } from '@material-ui/core/styles';
 import { fontWeight } from '@mui/system';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import { Button } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -300,20 +300,61 @@ function Confirmation({ term, campus, registrationID, registeredDate }) {
 
                 <div className={classes.botcontainer}>
                         <label className={classes.label1}>Academic term</label>
+                        
                     <div className={classes.cont1}>
                         <label className={classes.label11}>{term}</label>
+                        <TextField
+                            variant='standard'
+                            type='Read Only'
+                            defaultValue={'2022-2023 2nd Semester'}
+                            color='info'
+                            focused
+                            InputProps={{
+                                readOnly: true,
+                              }}>  
+                            </TextField>
                     </div>
                         <label className={classes.label2}>Campus</label>
                     <div className={classes.cont2}>
                         <label className={classes.label22}>{campus}</label>
+                        <TextField
+                            variant='standard'
+                            type='Read Only'
+                            defaultValue={'USTP CDO Campus'}
+                            color='info'
+                            focused
+                            InputProps={{
+                                readOnly: true,
+                              }}>  
+                            </TextField>
                     </div>
                         <label className={classes.label3}>Registration ID</label>
                     <div className={classes.cont3}>
                         <label className={classes.label33}>{registrationID}</label>
+                        <TextField
+                            variant='standard'
+                            type='Read Only'
+                            defaultValue={'2020303541'}
+                            color='info'
+                            focused
+                            InputProps={{
+                                readOnly: true,
+                              }}>  
+                            </TextField>
                     </div>
                         <label className={classes.label4}>Registered Date</label>
                     <div className={classes.cont4}>
                         <label className={classes.label44}>{registeredDate}</label>
+                        <TextField
+                            variant='standard'
+                            type='Read Only'
+                            defaultValue={'4/22/2023 9:48:05'}
+                            color='info'
+                            focused
+                            InputProps={{
+                                readOnly: true,
+                              }}>  
+                            </TextField>
                     </div>
             </div>
         </div>
