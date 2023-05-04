@@ -15,36 +15,33 @@ function Activation(){
     const params = useParams();
     
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+        <div style={{minHeight: '100vh', backgroundColor: '#425c59', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Container maxWidth>
                 <Grid container style={{ height: '100vh', justifyContent: 'center', alignItems: 'center' }}>
                     <Grid item xs={12} md={6} style={{ display: 'flex', justifyContent: 'center' }}>
-                        <Card style={{ width: '400px' }}>
-                            <CardContent>
+                        <Card style={{width: '400px', height: '250px', backgroundColor: "#4b6966"}}>
+                            <CardContent style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                 <FormControl fullWidth>
-                                    <h1 style={{textAlign: 'center'}}>Activate your Account</h1>   
+                                    <h1 style={{textAlign: 'center', color: '#ffcc9f' }}>Activate your Account</h1>   
                                     <Button 
-                                        style={{margin:5}}
+                                        style={{backgroundColor: '#ffcc9f', margin:5, marginTop: 25}}
                                         variant='contained'
                                         size='large'
                                         onClick={()=> {
                                             axios.post('accounts/users/activation/',params).then(response => {
-                                               if (response.status ===204) {
                                                     console.log('activated')
                                                     setFeedback('Your Acount has been activated')
                                                     setTimeout(function(){
                                                         navigate('/Login')
                                                     }, 3000);   
-                                                    
-                                               } else {
-                                                    setFeedback('Failed Activation')
-                                               }
+                                            }).catch((error)=>{
+                                                setFeedback('The Account already activated or failed activation')
                                             })   
                                         }}
                                     >
                                         Activate Account
                                     </Button>
-                                    <h1 alignItems='center'>{feedback}</h1>
+                                    <h3 style={{color: 'white', fontSize: 15, fontStyle: 'italic', display: 'flex', textAlign: 'center'}}>{feedback}</h3>
                                 </FormControl>
                             </CardContent>
                         </Card>

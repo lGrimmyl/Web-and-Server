@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.41','localhost','127.0.0.1','192.168.1.40']
 
 
 # Application definition
@@ -167,6 +167,7 @@ FRONTEND_URL = 'http://localhost:3000'
 
 CORS_ALLOW_ORIGINS = [
     'http://localhost:8000',
+    '192.168.1.41'
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True

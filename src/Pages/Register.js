@@ -15,15 +15,17 @@ function Register(){
     const [errorPassword,setErrorPassword] = useState ('')
     
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-            <Card style={{ width: '400px' }}>
-                <CardContent>
+        <div style={{ minHeight: '100vh', backgroundColor: '#425c59', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <h1 style={{ marginTop: '150px', color: '#ffcc9f', fontSize: 50 }}>IV OF HEARTS</h1>
+            <Card style={{ width: '400px', height: '300px', backgroundColor: "#4b6966" }}>
+                <CardContent style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <FormControl fullWidth>
                         <TextField 
                             style={{margin:5}}
                             variant='outlined' 
                             label='Email'
                             value={login.email}
+                            InputProps={{style: { color: 'white' }  }}
                             onChange={(event)=>{
                                 setLogin({
                                     ...login,
@@ -32,10 +34,12 @@ function Register(){
                             }}>
                         </TextField>
                         <TextField 
-                            style={{margin:5}}
+                            style={{margin:5, color: 'white'}}
                             variant='outlined' 
                             label='Password'
                             value={login.password}
+                            type='password'
+                            InputProps={{style: { color: 'white' }  }}
                             onChange={(event)=>{
                                 setLogin({
                                     ...login,
@@ -45,7 +49,7 @@ function Register(){
                         </TextField>
 
                         <Button 
-                            style={{margin:5}}
+                            style={{backgroundColor: '#ffcc9f', margin:5, marginTop: 25}}
                             variant='contained'
                             size='Large'
                             onClick={()=> {
@@ -63,7 +67,7 @@ function Register(){
                         </Button>
                         <Button 
                             color='success'
-                            style={{margin:5}}
+                            style={{backgroundColor: '#ffcc9f', margin:5}}
                             variant='contained'
                             size='Large'
                             onClick={()=>{}}>
@@ -71,7 +75,7 @@ function Register(){
                         </Button>
                     </FormControl>
 
-                    <h3>{feedback}</h3>
+                    <h3 style={{ color: 'white', fontSize: 13, fontStyle: 'italic', display: 'flex', alignItems: 'center'}} >{feedback} </h3>
                 </CardContent>
             </Card>
         </div>
