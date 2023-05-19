@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
+import Subject from './Subject';
 const useStyles = makeStyles({
   container: {
     alignItems: 'center',
@@ -143,54 +144,53 @@ const useStyles = makeStyles({
 
 });
 
+
+
 function Registration() {
   const classes = useStyles();
   const navigate = useNavigate();
-  const [FName, setAccessKey] = useState('');
-  const [LName, AccessKey] = useState('');
-  const [IDName, AccessKey2] = useState('');
-  const [EName, AccessKey3] = useState('');
-  const [NName, AccessKey4] = useState('');
-  const [loginError, setLoginError] = useState();
-  const [Fvalue, setValue] = useState("");
-  const [Lvalue, Value2] = useState("");
-  const [IDvalue, Value3] = useState("");
-  const [Evalue, Value4] = useState("");
-  const [Nvalue, Value5] = useState("");
-  const email_regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (Fvalue >= 10) {
-      setLoginError(false)
-      setAccessKey('')
-      navigate("/SubjectRegistration");
-    } 
-    else if (Lvalue >= 10) {
-      setLoginError(false)
-      AccessKey('')
-      navigate("/SubjectRegistration");
-    } 
-    else if (IDvalue >= 10) {
-      setLoginError(false)
-      AccessKey2('')
-      navigate("/SubjectRegistration");
-    } 
-    else if (Evalue >= 10) {
-      setLoginError(false)
-      AccessKey3('')
-      navigate("/SubjectRegistration");
-    } 
-    else if (Nvalue >= 10) {
-      setLoginError(false)
-      AccessKey4('')
-      navigate("/SubjectRegistration");
-    } 
-    else {
-      setLoginError(true)
-      setAccessKey('Incorrect Input, Please provide a proper input')
-    }
-  };
+ 
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var idNumber = document.getElementById("idNumber").value;
+    var email = document.getElementById("email").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
   
+    if (firstName === "" || lastName === "" || idNumber === "" || email === "" || phoneNumber === "") {
+      alert("Please fill in all fields");
+      return false;
+    }
+    
+    var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!/^[a-zA-Z]+$/.test(firstName)) {
+      alert("First Name should only contain letters");
+      return false;
+    }
+    if (!/^[a-zA-Z]+$/.test(lastName)) {
+      alert("Last Name should only contain letters");
+      return false;
+    }
+    
+    
+    if (idNumber.length < 10) {
+      alert("Invalid ID Number");
+      return false;
+    }
+    if (!emailRegex.test(email)) {
+      alert("Invalid Email Address");
+      return false;
+    }
+    
+    if (phoneNumber.length < 11) {
+      alert("Invalid Phone Number");
+      return false;
+    }
+    else
+      navigate('/Subject')
+    return true;
+  }
+ 
   return (
     <div>
             <img src="https://i.ibb.co/QnCYhPm/Ellipse-14.png" className={classes.elfirstimg}/>
@@ -201,64 +201,48 @@ function Registration() {
         <label className={classes.label}>Enroll A New Student</label>
             <div className={classes.formcontainer}>
             <TextField
-                id="outlined-textarea"
+                id="firstName"
                 label="First Name"
                 required
-                value={Fvalue}
                 placeholder="Enter Your First Name"
                 multiline
                 type="text"
-                onChange={(e) => setValue(e.target.value)}
                 className={classes.textField1}
-                error={loginError}
-                helperText={FName}
             />
 
             <TextField
-                id="outlined-textarea"
+                required
+                id="lastName"
                 label="Last Name"
-                value={Lvalue}
                 placeholder="Enter Your Last Name"
                 multiline
                 type="text"
-                onChange={(e) => Value2(e.target.value)}
                 className={classes.textField2}
-                error={loginError}
-                helperText={LName}
             />
             <TextField
-                id="outlined-textarea"
+                required
+                id="idNumber"
                 label="ID Number"
-                value={IDvalue}
                 type="number"
-                onChange={(e) => Value3(e.target.value)}
-                error={loginError}
-                helperText={IDName}
                 placeholder="Enter Your ID Number"
                 multiline
                 className={classes.textField3}
                         />
             <TextField
-                id="outlined-textarea"
+                required
+                id="email"
                 label="Email"
-                value={Evalue}
                 type="text"
-                onChange={(e) => Value4(e.target.value)}
-                error={loginError}
-                helperText={EName}
                 placeholder=" Enter Your Email"
                 multiline
                 className={classes.textField4}
                     />
             <TextField
-                id="outlined-textarea"
+                required
+                id="phoneNumber"
                 label="Phone Number"
                 placeholder=" Enter Your Phone Number"
-                value={Nvalue}
                 type="number"
-                onChange={(e) => Value5(e.target.value)}
-                error={loginError}
-                helperText={NName}
                 multiline
                 className={classes.textField5}
                     />
