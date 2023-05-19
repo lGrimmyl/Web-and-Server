@@ -160,7 +160,7 @@ function Registration() {
   const email_regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (Fvalue >= 10) {
+    if (Fvalue >= 5) {
       setLoginError(false)
       setAccessKey('')
       navigate("/SubjectRegistration");
@@ -170,17 +170,17 @@ function Registration() {
       AccessKey('')
       navigate("/SubjectRegistration");
     } 
-    else if (IDvalue >= 10) {
+    else if (IDvalue >= 5) {
       setLoginError(false)
       AccessKey2('')
       navigate("/SubjectRegistration");
     } 
-    else if (Evalue >= 10) {
+    else if (Evalue = email_regex) {
       setLoginError(false)
       AccessKey3('')
       navigate("/SubjectRegistration");
     } 
-    else if (Nvalue >= 10) {
+    else if (Nvalue >= 11) {
       setLoginError(false)
       AccessKey4('')
       navigate("/SubjectRegistration");
