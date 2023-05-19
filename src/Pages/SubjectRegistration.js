@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TableContainer from '@material-ui/core/TableContainer';
 import { fontWeight } from '@mui/system';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -232,6 +232,7 @@ const dropdownOptions = [
 
 
 function SubjectRegistration() {
+  const navigate = useNavigate()
   const classes = useStyles();
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedRows, setSelectedRows] = useState([]);
@@ -267,7 +268,11 @@ function SubjectRegistration() {
           </div>
         </div>
         <label className={classes.contlabel1}>Subjects</label>
-        <button className={classes.buttonlogin} type="submit">
+        <button 
+        className={classes.buttonlogin}
+        onClick={() => {
+          navigate("/Confirmation");}}
+        type="submit" >
           Enroll
         </button>
        
@@ -298,6 +303,7 @@ function SubjectRegistration() {
             onClick={() => {
               setSelectedOption('');
               setSelectedRows([]);
+              
             }}
             
         
