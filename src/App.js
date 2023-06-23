@@ -8,7 +8,16 @@ import SubjectRegistration from "./Pages/SubjectRegistration";
 import Confirmation from "./Pages/Confirmation";
 import Section from "./Pages/Section";
 import Register from "./Pages/Register";
+import FRegister from "./Pages/FRegister.js";
 import Profile from "./Pages/Profle";
+import EventUp from "./Pages/EventUp";
+import CampusMap from "./Pages/CampusMap";
+import Organizations from "./Pages/Organizations";
+import Chat from "./Pages/Chat";
+
+
+
+
 import {
   createBrowserRouter,
   RouterProvider
@@ -23,7 +32,33 @@ const router = createBrowserRouter([
     path: "/",
     element: <Login />,
   },
+
+  {
+    path: "/Chat",
+    element: <Chat/>,
+  },
+
+  {
+    path: "/Organizations",
+    element: <Organizations/>,
+  },
+
+  {
+    path: "/CampusMap",
+    element: <CampusMap/>,
+  },
+
   
+  {
+    path: "/EventUp",
+    element: <EventUp />,
+  },
+
+  {
+    path: "/FRegister",
+    element: <FRegister />,
+  },
+
   {
     path: "/Login",
     element: <Register />,
