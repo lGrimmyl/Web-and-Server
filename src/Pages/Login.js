@@ -9,46 +9,14 @@ import { Button } from '@mui/material';
 import { Link, Navigate } from 'react-router-dom';
 import Menu from './Menu';
 import { Route,Routes,useNavigate } from 'react-router-dom';
+import logo from '../Images/blaze_1.png';
+
 
 const useStyles = makeStyles({
     container: {
-    height: '100vh', // Set the height to 50% of the viewport height
+    height: '100vh',
     width: '100vw',
-    
   },
-  container1: {
-    backgroundColor: '#0077B6', // Add your own styling to container 1
-    flex: 1,
-    position: 'relative'
-
-  },
- 
-  container2: {
-    backgroundColor: '#E5E5E5', // Add your own styling to container 2
-  },
-
-  image1: {
-    bottom: 100,
-    left: 4,
-    width: '100%',
-    height: '75%',
-    top: 10,
-    position: 'relative'
-  
-    
-  },
-  image2: {
-    width: '100%',
-    height: '20%',
-    
-    left: 0,
-    bottom: 0,
-    position: 'absolute'
-  
-
-    
-  },
-
     label1: {
       top: 350,
       left: 50,
@@ -56,7 +24,6 @@ const useStyles = makeStyles({
       width: '100%',
       alignItems: 'center',
       position: 'relative',
-      
       '& .MuiInputBase-root': {
         opacity: 0.5,
         width: '58ch',
@@ -64,10 +31,6 @@ const useStyles = makeStyles({
       },
       '& .MuiSvgIcon-root': {
         marginRight: 10,
-       
-        
-       
-
       },
     },
   
@@ -85,18 +48,11 @@ const useStyles = makeStyles({
       boxShadow: '0 3px 5px 2px rgba(0, 119, 182, 1.0)',
       width: '88%',
       backgroundColor: '#0077B6',
-      color: '#fff',
       '&:hover': {
         backgroundColor: '#034162',
-      
     }
     },
   });
-
-
- 
-
-
 function Login() {
   const navigate = useNavigate();
   const classes = useStyles();
@@ -117,11 +73,7 @@ function Login() {
       setBut(true)
     }
   };
-
-
   return (
-
-
             <Grid container spacing={0} className={classes.container}>
             <Grid item xs={12} md={6} className={classes.container1}>
               
@@ -163,8 +115,4 @@ function Login() {
 
   );
 }
-
-
-
-
 export default Login;

@@ -30,7 +30,7 @@ import Activation from "./Pages/Activation";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Register />,
   },
 
   {

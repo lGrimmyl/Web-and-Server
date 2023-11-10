@@ -350,7 +350,7 @@ function Confirmation({ term, campus, registrationID, registeredDate }) {
                             type='Read Only'
                             defaultValue={'4/22/2023 9:48:05'}
                             color='info'
-                            focused
+                            focused 
                             InputProps={{
                                 readOnly: true,
                               }}>  
